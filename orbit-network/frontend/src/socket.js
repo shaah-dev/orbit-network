@@ -7,7 +7,9 @@ export function connectSocket() {
   if (!token) return null;
   if (socket?.connected) return socket;
 
-  socket = io("/", {
+  const serverUrl = import.meta.env.VITE_API_URL || "";
+
+  socket = io(serverUrl, {
     path: "/socket.io",
     auth: { token },
     transports: ["websocket", "polling"],
