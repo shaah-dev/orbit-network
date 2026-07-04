@@ -15,7 +15,7 @@ router.post("/signup", async (req, res) => {
       return res.status(400).json({ message: "All fields are required" });
     }
     const existing = await User.findOne({
-      $or: [{ email: email.toLowerCase() }, { username: username.toLowerCase() }],
+      $or: [{ email: email.toLowerCase() }, { username: username.toLowerCase().replace(/[^a-z0-9_]/g, "") }],
     });
     if (existing) {
       return res.status(409).json({ message: "Email or username already in use" });
@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
     const hashed = await bcrypt.hash(password, 10);
     const user = await User.create({
       name,
-      username: username.toLowerCase(),
+      username: username.toLowerCase().replace(/[^a-z0-9_]/g, ""),
       email: email.toLowerCase(),
       password: hashed,
     });
