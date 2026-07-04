@@ -156,14 +156,3 @@ db.users.updateOne({ username: "your_username" }, { $set: { role: "admin" } })
   to a fixed left sidebar above 900px width (see the media queries at the
   bottom of `src/index.css`). The feed column is centered and capped at 640px
   so it reads well on phone, tablet, and desktop alike.
-
-## Next steps you might want
-
-- Add direct messaging (a `Conversation`/`Message` model + a chat UI) to get
-  closer to Telegram-style functionality.
-- Add image lightboxes, stories, or video posts for an Instagram-style feel.
-- Move file storage to Cloudinary or S3 before deploying, since local
-  `uploads/` won't persist on most hosting platforms.
-- Deploy the backend (Render, Railway, Fly.io) and the frontend (Vercel,
-  Netlify), pointing `CLIENT_URL` and the frontend's API base URL at each
-  other's production domains.
