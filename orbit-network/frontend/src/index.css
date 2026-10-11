@@ -1073,7 +1073,6 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
   .topbar { display: flex; }
   .main-content { padding: 16px 14px 90px; max-width: 100%; border-right: none; }
   .auth-brand-panel { display: none; }
-  .chat-sidebar { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
