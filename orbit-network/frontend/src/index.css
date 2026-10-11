@@ -1072,29 +1072,35 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
   .main-content { padding: 16px 14px 90px; max-width: 100%; border-right: none; }
   .auth-brand-panel { display: none; }
 
-  /* 2. Clean Stacked Chat Fix for Mobile */
+  /* 2. Absolute reset for mobile chat to prevent overlapping */
   .chat-container, .chat-page, .messages-container {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    height: calc(100vh - 120px) !important;
+    height: calc(100vh - 110px) !important;
     position: relative !important;
-    overflow-y: auto !important;
+    overflow: hidden !important;
   }
 
   .chat-sidebar {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
+    position: relative !important;
+    top: 0;
+    left: 0;
     border-right: none !important;
-    border-bottom: 1px solid var(--border) !important;
+    z-index: 5 !important;
   }
 
   .chat-window, .chat-main {
     width: 100% !important;
-    flex: 1 !important;
-    height: auto !important;
-    position: relative !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    background: var(--surface) !important;
+    z-index: 10 !important;
   }
 }
 
