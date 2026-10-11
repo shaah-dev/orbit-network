@@ -1025,7 +1025,51 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
 @media (max-width: 1100px) { .right-panel { display: none; } }
 
 @media (max-width: 768px) {
-  .sidebar { display: none; }
+  /* Sidebar ko mobile par bottom navigation bar bana do */
+  .sidebar {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    top: auto !important;
+    width: 100% !important;
+    height: 60px !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    background: var(--surface) !important;
+    border-top: 1px solid var(--border) !important;
+    border-right: none !important;
+    padding: 0 10px !important;
+    z-index: 1000 !important;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Extra elements ko mobile view mein hide kar do */
+  .sidebar-brand,
+  .sidebar-divider,
+  .sidebar-user,
+  .search-bar,
+  .sidebar-nav .nav-item span:not(.nav-icon),
+  .sidebar div[style*="display: flex"] {
+    display: none !important;
+  }
+
+  /* Nav items ko horizontal align karo */
+  .sidebar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .nav-item {
+    padding: 8px !important;
+    justify-content: center !important;
+  }
+
   .topbar { display: flex; }
   .main-content { padding: 16px 14px 90px; max-width: 100%; border-right: none; }
   .auth-brand-panel { display: none; }
