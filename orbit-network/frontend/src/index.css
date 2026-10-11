@@ -1025,7 +1025,7 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
 @media (max-width: 1100px) { .right-panel { display: none; } }
 
 @media (max-width: 768px) {
-  /* 1. Sidebar ko mobile par bottom navigation bar bana do */
+  /* 1. Bottom Navigation Bar */
   .sidebar {
     display: flex !important;
     position: fixed !important;
@@ -1045,7 +1045,6 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
   }
 
-  /* Unnecessary elements ko mobile bottom bar se hide karo */
   .sidebar-brand,
   .sidebar-divider,
   .sidebar-user,
@@ -1055,7 +1054,6 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
     display: none !important;
   }
 
-  /* Navigation items ko horizontal align karo */
   .sidebar-nav {
     display: flex !important;
     flex-direction: row !important;
@@ -1074,25 +1072,29 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
   .main-content { padding: 16px 14px 90px; max-width: 100%; border-right: none; }
   .auth-brand-panel { display: none; }
 
-  /* 2. Chat & Conversations responsiveness fix for mobile */
+  /* 2. Clean Stacked Chat Fix for Mobile */
   .chat-container, .chat-page, .messages-container {
+    display: flex !important;
     flex-direction: column !important;
-    height: calc(100vh - 110px) !important;
+    width: 100% !important;
+    height: calc(100vh - 120px) !important;
     position: relative !important;
-    overflow: hidden !important;
+    overflow-y: auto !important;
   }
 
   .chat-sidebar {
     width: 100% !important;
-    height: 100% !important;
     max-width: 100% !important;
+    height: auto !important;
     border-right: none !important;
-    display: flex !important;
-    z-index: 20 !important;
+    border-bottom: 1px solid var(--border) !important;
   }
 
   .chat-window, .chat-main {
-    display: none !important;
+    width: 100% !important;
+    flex: 1 !important;
+    height: auto !important;
+    position: relative !important;
   }
 }
 
