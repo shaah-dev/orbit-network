@@ -1078,6 +1078,7 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
   .chat-container, .chat-page, .messages-container {
     flex-direction: column !important;
     height: calc(100vh - 110px) !important;
+    position: relative !important;
     overflow: hidden !important;
   }
 
@@ -1087,16 +1088,11 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
     max-width: 100% !important;
     border-right: none !important;
     display: flex !important;
+    z-index: 20 !important;
   }
 
   .chat-window, .chat-main {
-    width: 100% !important;
-    height: 100% !important;
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    background: var(--surface);
-    z-index: 10;
+    display: none !important;
   }
 }
 
