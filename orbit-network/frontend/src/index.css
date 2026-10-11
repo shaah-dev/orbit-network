@@ -1025,7 +1025,7 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
 @media (max-width: 1100px) { .right-panel { display: none; } }
 
 @media (max-width: 768px) {
-  /* Sidebar ko mobile par bottom navigation bar bana do */
+  /* 1. Sidebar ko mobile par bottom navigation bar bana do */
   .sidebar {
     display: flex !important;
     position: fixed !important;
@@ -1045,7 +1045,7 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
   }
 
-  /* Extra elements ko mobile view mein hide kar do */
+  /* Unnecessary elements ko mobile bottom bar se hide karo */
   .sidebar-brand,
   .sidebar-divider,
   .sidebar-user,
@@ -1055,7 +1055,7 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
     display: none !important;
   }
 
-  /* Nav items ko horizontal align karo */
+  /* Navigation items ko horizontal align karo */
   .sidebar-nav {
     display: flex !important;
     flex-direction: row !important;
@@ -1073,6 +1073,31 @@ textarea.input { resize: vertical; min-height: 80px; line-height: 1.5; }
   .topbar { display: flex; }
   .main-content { padding: 16px 14px 90px; max-width: 100%; border-right: none; }
   .auth-brand-panel { display: none; }
+
+  /* 2. Chat & Conversations responsiveness fix for mobile */
+  .chat-container, .chat-page, .messages-container {
+    flex-direction: column !important;
+    height: calc(100vh - 110px) !important;
+    overflow: hidden !important;
+  }
+
+  .chat-sidebar {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    border-right: none !important;
+    display: flex !important;
+  }
+
+  .chat-window, .chat-main {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    background: var(--surface);
+    z-index: 10;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
